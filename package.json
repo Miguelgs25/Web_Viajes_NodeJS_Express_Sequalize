@@ -1,0 +1,19 @@
+{
+  "name": "proyecto_web_viajes",
+  "version": "1.0.0",
+  "description": "Proyecto para aprender Node js, express y sequalize, (pug bootstrap)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miguelgs25/Web_Viajes_NodeJS_Express_Sequalize.git"
+  },
+  "author": "Miguel GS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miguelgs25/Web_Viajes_NodeJS_Express_Sequalize/issues"
+  },
+  "homepage": "https://github.com/Miguelgs25/Web_Viajes_NodeJS_Express_Sequalize#readme"
+}
