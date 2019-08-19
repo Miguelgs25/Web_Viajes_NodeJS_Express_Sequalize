@@ -4,7 +4,7 @@
   "description": "Proyecto para aprender Node js, express y sequalize, (pug bootstrap)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Miguelgs25/Web_Viajes_NodeJS_Express_Sequalize/issues"
   },
-  "homepage": "https://github.com/Miguelgs25/Web_Viajes_NodeJS_Express_Sequalize#readme"
+  "homepage": "https://github.com/Miguelgs25/Web_Viajes_NodeJS_Express_Sequalize#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.19.1",
+    "pug": "^2.0.4",
+    "sequelize": "^5.15.0"
+  }
 }
