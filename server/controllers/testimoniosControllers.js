@@ -2,15 +2,12 @@
 const Testimonio=require("../models/Testimonios");
 
 
-exports.infoTestimonios=(req,res)=>{
-    Testimonio.findAll()
-    .then(testimonios=>{
-        res.render("testimonios",{
-            testimonios,
-            pagina: "Testimonios"
-        })
-    })
-    .catch(error=>console.log(error));
+exports.infoTestimonios=async(req,res)=>{
+    const testimonios=await Testimonio.findAll();
+    res.render("testimonios",{
+        testimonios,
+        pagina: "Testimonios"
+    });
     /*
     res.render("testimonios", {//render puede tomar como segundo parámetro un objeto que define variables
                             //para luego poder usadas en las views
@@ -18,7 +15,7 @@ exports.infoTestimonios=(req,res)=>{
     })*/
 }
 
-exports.agregarTestimonio=(req,res)=>{
+exports.agregarTestimonio=async (req,res)=>{
     const {nombre,correo,comentario}=req.body;
    
     //validar que los campos no estén vacios
@@ -34,11 +31,13 @@ exports.agregarTestimonio=(req,res)=>{
     if(errores.length>0){
         //Hay errores
         //Muestra la vista con errores
+        const testimonios=await Testimonio.findAll();
         res.render("testimonios",{
             errores,
             nombre,
             correo,
-            comentario
+            comentario,
+            testimonios
         });
 
     }else{

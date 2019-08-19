@@ -5,6 +5,8 @@ const routes=require("./routes");
 const configs=require("./config");
 const bodyParser=require("body-parser");
 
+require("dotenv").config({path:"variables.env"});
+
 //db.authenticate()
 //    .then(()=>console.log("DB Conectada"))
 //    .catch(error=> console.log(error));
@@ -43,7 +45,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 //cargar las rutas
 app.use("/",routes());
 
-app.listen(3000);
+
+//---------------Puerto y host para la app
+//coje el valor de la variable de entorno en local o heroku entiende el valor 0.0.0.0 y lo autoasigna
+const host=process.env.HOST || "0.0.0.0"; 
+const port=process.env.PORT || 3000;//Heroku entiende la variable de entorno .PORT, en caso local pone 3000
+app.listen(port,host,()=> console.log("Servidor funcionando"));
 
 
 
